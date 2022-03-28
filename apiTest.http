@@ -29,3 +29,14 @@ Content-Type: application/json
 {
     "name": "Mashrafi Bi Murtaja"
 }
+
+###
+
+PUT http://localhost:4000/GUkamSyWW
+Content-Type: application/json
+
+{
+    "name": "Tamim ",
+    "country": "BD",
+    "rank": 20
+}
