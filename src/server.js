@@ -4,7 +4,6 @@ const cors = require("cors");
 const shortId = require("shortid");
 const fs = require("fs/promises");
 const path = require("path");
-const res = require("express/lib/response");
 const dbLocation = path.resolve("src", "data.json");
 
 const app = express();
@@ -25,6 +24,7 @@ app.get("/:id", async (req, res) => {
     return res.status(404).json({ message: "Player Not Found" });
   }
 
+  res.set('Cache-control', 'public, max-age=300')
   res.status(200).json(player);
 });
 
@@ -116,6 +116,7 @@ app.get("/", async (req, res) => {
   const data = await fs.readFile(dbLocation);
   const players = JSON.parse(data);
 
+  res.set('Cache-control', 'public, max-age=300')
   res.status(201).json(players);
 });
 

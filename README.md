@@ -2,12 +2,11 @@
 
 **_Backend_**
 
-### Player Micriservice
+### REST API Constraints
 
-- [x] CRUD - Create Read Update Delete
-- [ ] GET - / - Find all players
-- [ ] POST - / - Create a new player and save into db
-- [ ] GET - /:id - Find a single player by id
-- [ ] PUT - /:id - update or create player
-- [ ] PATCH - /:id - update player
-- [ ] DELETE - /:id - delete player from db
+- [x] Uniform Interface
+- [x] Client-Server
+- [x] Stateless
+- [x] Cocheable
+- [x] Layered system
+- [ ] Code Ond Demand(optional)
