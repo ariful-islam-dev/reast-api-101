@@ -2,24 +2,15 @@
 
 **_Backend_**
 
-### HTTP Methods
+### HTTP Status Codes
 
-- [x] GET
-- [x] POST
-- [x] PATCH
-- [x] PUT
-- [x] DELETE
-- [x] HEAD
-- [x] CONNECT
-- [x] OPTIONS
-- [x] TRACE
-
-### Route Naming Convention
-
-- > if principle route is product methods blow
-- [x] GET /products Find All Product
-- [x] POST /products Create new Product
-- [x] GET /products/:id Find A Single Product
-- [x] PUT /products/:id Update A Single Product all Item
-- [x] PATCH /products/:id Update A Single Product Any Item
-- [x] DELETE /products/:id Delete A Single Item
+- [x] 200 OK
+- [x] 201 Created
+- [x] 204 No Content
+- [x] 302 Not Modified
+- [x] 400 Bad Request
+- [x] 401 Unauthorized
+- [x] 403 Forbidden
+- [x] 404 Not Found
+- [x] 409 Conflict
+- [x] 500 Internal Server Error

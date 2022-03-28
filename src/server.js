@@ -74,7 +74,7 @@ app.delete('/:id', async(req, res)=>{
 
   await fs.writeFile(dbLocation, JSON.stringify(newPlayers));
 
-  res.status(203).json({message: 'Delete Successful'})
+  res.status(204).json({message: 'Delete Successful'})
 
 })
 
