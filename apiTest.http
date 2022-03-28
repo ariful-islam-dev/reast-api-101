@@ -21,3 +21,11 @@ GET  http://localhost:4000
 GET http://localhost:4000/_El3vMRMq
 ###
 GET http://localhost:4000/GUkamSyWW
+
+###
+PATCH http://localhost:4000/_El3vMRMq
+Content-Type: application/json
+
+{
+    "name": "Mashrafi Bi Murtaja"
+}

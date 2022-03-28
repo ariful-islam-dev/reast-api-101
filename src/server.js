@@ -29,6 +29,27 @@ app.get('/:id', async(req, res)=>{
 })
 
 
+app.patch('/:id', async(req, res)=>{
+    const id = req.params.id;
+
+    const data = await fs.readFile(dbLocation)
+    const players = JSON.parse(data);
+
+    const player = players.find((item)=> item.id === id);
+
+    if(!player){
+        return res.status(404).json({message: 'Player Not Found'})
+    }
+
+    player.name = req.body.name || player.name
+    player.country = req.body.country || player.country
+    player.rank = req.body.rank || player.rank
+
+    await fs.writeFile(dbLocation, JSON.stringify(players));
+    res.status(203).json(player)
+})
+
+
 app.post('/', async(req, res)=>{
     const player = {
         ...req.body,
