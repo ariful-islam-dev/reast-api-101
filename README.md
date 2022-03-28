@@ -2,11 +2,14 @@
 
 **_Backend_**
 
-### REST API Constraints
+### HTTP Methods
 
-- [x] Uniform Interface
-- [x] Client-Server
-- [x] Stateless
-- [x] Cocheable
-- [x] Layered system
-- [ ] Code Ond Demand(optional)
+- [x] GET
+- [x] POST
+- [x] PATCH
+- [x] PUT
+- [x] DELETE
+- [x] HEAD
+- [x] CONNECT
+- [x] OPTIONS
+- [x] TRACE
