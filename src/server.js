@@ -3,7 +3,8 @@ const morgan = require("morgan");
 const cors = require("cors");
 const shortId = require('shortid')
 const fs = require('fs/promises');
-const path = require('path')
+const path = require('path');
+const res = require("express/lib/response");
 const dbLocation = path.resolve('src', 'data.json')
 
 const app = express();
@@ -11,6 +12,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
+
+app.get('/:id', async(req, res)=>{
+    const id = req.params.id;
+
+    const data = await fs.readFile(dbLocation)
+    const players = JSON.parse(data);
+
+    const player = players.find((item)=> item.id === id);
+
+    if(!player){
+        return res.status(404).json({message: 'Player Not Found'})
+    }
+
+    res.status(200).json(player)
+})
 
 
 app.post('/', async(req, res)=>{
@@ -37,6 +53,8 @@ app.get('/', async(req, res)=>{
 
     res.status(201).json(players)
 })
+
+
 
 app.get("/health", (req, res) => {
   return res.status(200).json({ Status: "OK" });
